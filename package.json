@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "asciichart": "^1.5.25",
+    "prompt-sync": "^4.2.0"
+  }
+}
