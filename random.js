@@ -1,30 +1,37 @@
 const prompt = require("prompt-sync")();
 var asciichart = require("asciichart");
 
-console.log(
-  "\n##################### RANDOM NUMBER ALGORITHMS ######################\n"
-);
-console.log("1. middleSquare Method ");
-console.log("2. multiplication Method");
-console.log("3. Coexistence method");
 
-console.log("\n");
+function MainPage(){
 
-var choice = prompt("Enter Your Choice : ");
-console.log("\n");
-
-switch (choice) {
-  case "1":
-    middleSquareMethod();
-    break;
-  case "2":
-    multiplicationMethod();
-    break;
-  case "3":
-    coexistenceMethod();
-    break;
-  default:
-    break;
+  console.log(
+    "\n##################### RANDOM NUMBER ALGORITHMS ######################\n"
+  );
+  console.log("1. middleSquare Method ");
+  console.log("2. multiplication Method");
+  console.log("3. Coexistence method");
+  console.log("4. Exit")
+  
+  console.log("\n");
+  
+  var choice = prompt("Enter Your Choice : ");
+  console.log("\n");
+  
+  switch (choice) {
+    case "1":
+      middleSquareMethod();
+      break;
+    case "2":
+      multiplicationMethod();
+      break;
+    case "3":
+      coexistenceMethod();
+      break;
+    case "4": 
+      break;
+    default:
+      break;
+  }
 }
 
 function middleSquareMethod() {
@@ -56,7 +63,10 @@ function middleSquareMethod() {
     }
     console.log("=================== CHART ======================\n");
     console.log(asciichart.plot(chart, { height: 20 }));
+    console.log("=================== CHART ======================\n");
+
   }
+  MainPage();
 }
 
 function multiplicationMethod() {
@@ -89,7 +99,10 @@ function multiplicationMethod() {
     }
     console.log("=================== CHART ======================\n");
     console.log(asciichart.plot(chart, { height: 20 }));
+    console.log("=================== CHART ======================\n");
+    
   }
+  MainPage();
 }
 
 function coexistenceMethod() {
@@ -104,24 +117,31 @@ function coexistenceMethod() {
   var M = 5;
   var chart = [];
 
-  x[0] = 34;
-  x[1] = 789;
-  x[2] = 243;
-  x[3] = 1001;
-  x[4] = 903;
+  for (let i = 0; i < 5; i++) {
+    x[i] = prompt(`enter number ${i} : `);
+  }
 
+ 
 
-  chart[0] = x[0];
-  chart[1] = x[1];
-  chart[2] = x[2];
-  chart[3] = x[3];
-  chart[4] = x[4];
+  chart[0] = parseInt(x[0]);
+  chart[1] = parseInt(x[1]);
+  chart[2] = parseInt(x[2]);
+  chart[3] = parseInt(x[3]);
+  chart[4] = parseInt(x[4]);
 
-  for (let i = 5; i < 20; i++) {
+  for (let i = 5; i < 60; i++) {
     x[i] = (x[i - M] + x[i - 1]) % m;
     chart[i] = x[i].toString();
   }
 
+
   console.log(chart);
-  console.log(asciichart.plot(chart, { height: 20 }));
+  console.log("=================== CHART ======================\n");
+  console.log(asciichart.plot(chart, { height: 30 }));
+  console.log("=================== CHART ======================\n");
+
+  MainPage();
 }
+
+
+MainPage();
