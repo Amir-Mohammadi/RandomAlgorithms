@@ -1,22 +1,20 @@
 const prompt = require("prompt-sync")();
 var asciichart = require("asciichart");
 
-
-function MainPage(){
-
+function MainPage() {
   console.log(
     "\n##################### RANDOM NUMBER ALGORITHMS ######################\n"
   );
   console.log("1. middleSquare Method ");
   console.log("2. multiplication Method");
   console.log("3. Coexistence method");
-  console.log("4. Exit")
-  
+  console.log("4. Exit");
+
   console.log("\n");
-  
+
   var choice = prompt("Enter Your Choice : ");
   console.log("\n");
-  
+
   switch (choice) {
     case "1":
       middleSquareMethod();
@@ -27,7 +25,7 @@ function MainPage(){
     case "3":
       coexistenceMethod();
       break;
-    case "4": 
+    case "4":
       break;
     default:
       break;
@@ -64,7 +62,6 @@ function middleSquareMethod() {
     console.log("=================== CHART ======================\n");
     console.log(asciichart.plot(chart, { height: 20 }));
     console.log("=================== CHART ======================\n");
-
   }
   MainPage();
 }
@@ -100,7 +97,6 @@ function multiplicationMethod() {
     console.log("=================== CHART ======================\n");
     console.log(asciichart.plot(chart, { height: 20 }));
     console.log("=================== CHART ======================\n");
-    
   }
   MainPage();
 }
@@ -117,23 +113,26 @@ function coexistenceMethod() {
   var M = 5;
   var chart = [];
 
-  for (let i = 0; i < 5; i++) {
-    x[i] = prompt(`enter number ${i} : `);
+  for (let i = 0; i < 10; i++) {
+    x[i] = prompt(`Enter Number ${i} : `);
   }
 
- 
+  chart[0] = parseInt(x[0]) / 10000;
+  chart[1] = parseInt(x[1]) / 10000;
+  chart[2] = parseInt(x[2]) / 10000;
+  chart[3] = parseInt(x[3]) / 10000;
+  chart[4] = parseInt(x[4]) / 10000;
+  chart[5] = parseInt(x[5]) / 10000;
+  chart[6] = parseInt(x[6]) / 10000;
+  chart[7] = parseInt(x[7]) / 10000;
+  chart[8] = parseInt(x[8]) / 10000;
+  chart[9] = parseInt(x[9]) / 10000;
 
-  chart[0] = parseInt(x[0]);
-  chart[1] = parseInt(x[1]);
-  chart[2] = parseInt(x[2]);
-  chart[3] = parseInt(x[3]);
-  chart[4] = parseInt(x[4]);
-
-  for (let i = 5; i < 60; i++) {
-    x[i] = (x[i - M] + x[i - 1]) % m;
-    chart[i] = x[i].toString();
+  for (let i = 10; i < 60; i++) {
+    x[i] = (x[i - M] + x[i - 1]) % m ;
+    result = parseFloat(x[i] / 1000);
+    chart[i] = result.toString();
   }
-
 
   console.log(chart);
   console.log("=================== CHART ======================\n");
@@ -142,6 +141,5 @@ function coexistenceMethod() {
 
   MainPage();
 }
-
 
 MainPage();
